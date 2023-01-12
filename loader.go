@@ -7,6 +7,10 @@ import (
 	"github.com/pkg/errors"
 )
 
+const (
+	tagKey = "ssm"
+)
+
 func Load(v any) error {
 	rv := reflect.ValueOf(v)
 	if rv.Kind() != reflect.Pointer || rv.IsNil() {
@@ -22,7 +26,7 @@ func Load(v any) error {
 
 	keys := make([]string, rt.NumField())
 	for i := 0; i < rt.NumField(); i++ {
-		keys[i] = rt.Field(i).Tag.Get("ssm")
+		keys[i] = rt.Field(i).Tag.Get(tagKey)
 	}
 
 	// WIP
