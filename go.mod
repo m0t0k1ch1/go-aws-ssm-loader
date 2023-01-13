@@ -1,4 +1,4 @@
-module github.com/m0t0k1ch1/aws-ssm-loader
+module github.com/m0t0k1ch1/go-aws-ssm-loader
 
 go 1.19
 
